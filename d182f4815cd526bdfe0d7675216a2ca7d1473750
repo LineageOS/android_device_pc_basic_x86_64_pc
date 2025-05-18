@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cd1aa2e_fdf059eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-18T21:52:09Z",
+      "side": 1,
+      "message": "- The HAL supports stubbing\n- Using FF API means that e.g. external joysticks can be used for vibration",
+      "revId": "d182f4815cd526bdfe0d7675216a2ca7d1473750",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

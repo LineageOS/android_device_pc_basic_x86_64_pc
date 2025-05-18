@@ -7,6 +7,7 @@ DEVICE_PATH := device/pc/basic_x86_64_pc
 
 # Inherit from mainline/common
 TARGET_HAS_BATTERY := false
+TARGET_HAS_VIBRATOR := false
 TARGET_SUPPORTS_USB_ACCESSORY_MODE := false
 TARGET_USES_FRAMEBUFFER_DISPLAY := true
 include device/mainline/common/optional/options.mk

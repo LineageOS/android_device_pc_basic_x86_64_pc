@@ -3,4 +3,4 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-import /init.recovery.mainline.rc
+import /system/etc/init/hw/init.recovery.mainline.rc

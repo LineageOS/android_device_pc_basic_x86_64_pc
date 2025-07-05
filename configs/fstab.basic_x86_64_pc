@@ -3,15 +3,22 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Base
+/dev/block/by-name/base /oem ext4 defaults first_stage_mount
+/dev/block/by-name/base /oem f2fs defaults first_stage_mount
+/dev/block/by-name/base /oem vfat defaults first_stage_mount
+
+# Metadata
+/oem/android/metadata /metadata none bind latemount
+
 # System
-/dev/block/by-name/system /system ext4 noatime,ro first_stage_mount
+/oem/android/system.img /system ext4 noatime,ro first_stage_mount
 
 # Userdata
-/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid,discard latemount,check,quota,formattable
-/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,discard,reserve_root=32768 latemount,check,quota,formattable
+/oem/android/data /data none bind latemount
 
 # Vendor
-/dev/block/by-name/vendor /vendor ext4 noatime,ro first_stage_mount
+/oem/android/vendor.img /vendor ext4 noatime,ro first_stage_mount
 
 # External
 /devices/*/usb* auto auto defaults voldmanaged=usb:auto

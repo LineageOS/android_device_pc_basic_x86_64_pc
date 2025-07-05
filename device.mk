@@ -54,9 +54,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/init.recovery.basic_x86_64_pc.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.basic_x86_64_pc.rc
 
-# Scoped Storage
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 

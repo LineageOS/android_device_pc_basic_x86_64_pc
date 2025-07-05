@@ -22,7 +22,7 @@ BOARD_KERNEL_CMDLINE := \
     $(MAINLINE_COMMON_KERNEL_PARAMS) \
     androidboot.boot_devices=any \
     androidboot.hardware=basic_x86_64_pc \
-    androidboot.partition_map=sda1,system;sda2,vendor;sda3,userdata \
+    androidboot.partition_map=sda1,base \
     androidboot.selinux=permissive \
     androidboot.verifiedbootstate=orange \
     audit=0 \
@@ -47,13 +47,15 @@ TARGET_SKIP_OTA_PACKAGE := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_USES_METADATA_PARTITION := true
+TARGET_COPY_OUT_VENDOR := vendor
+
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 67108864
 BOARD_VENDORIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 67108864
-TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := basic_x86_64_pc

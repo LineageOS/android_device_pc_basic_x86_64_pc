@@ -5,6 +5,10 @@
 
 import /vendor/etc/init/hw/init.mainline.rc
 
+# Display
+on property:sys.bootstat.first_boot_completed=1
+    write /sys/class/vtconsole/vtcon1/bind 0
+
 # Mount
 on fs
     # Mount everything that does not require fsck

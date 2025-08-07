@@ -26,9 +26,11 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Init
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/fstab.basic_x86_64_pc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.basic_x86_64_pc \
-    $(DEVICE_PATH)/configs/init.basic_x86_64_pc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.basic_x86_64_pc.rc
+PRODUCT_PACKAGES += \
+    fstab.basic_x86_64_pc \
+    fstab.basic_x86_64_pc.ramdisk \
+    init.basic_x86_64_pc.rc \
+    init.recovery.basic_x86_64_pc.rc
 
 # Images
 PRODUCT_BUILD_BOOT_IMAGE := false
@@ -46,14 +48,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/pc_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/pc_core_hardware.xml
-
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/fstab.basic_x86_64_pc:$(TARGET_COPY_OUT_RAMDISK)/fstab.basic_x86_64_pc
-
-# Recovery
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/init.recovery.basic_x86_64_pc.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.basic_x86_64_pc.rc
 
 # Scoped Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)

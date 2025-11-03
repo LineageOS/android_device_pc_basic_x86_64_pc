@@ -32,6 +32,8 @@ PRODUCT_PACKAGES += \
     init.basic_x86_64_pc.rc \
     init.recovery.basic_x86_64_pc.rc
 
+$(call soong_config_set,mainline_common_libinit,set_properties_from,dmi_id)
+
 # Images
 PRODUCT_BUILD_BOOT_IMAGE := false
 PRODUCT_BUILD_RAMDISK_IMAGE := true
